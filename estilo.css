@@ -257,6 +257,10 @@ footer {
     .projeto-item {
         height: 200px; /* Reduz a altura dos itens de projeto em dispositivos móveis */
     }
+
+    .social-links a:hover {
+        transform: scale(2.0); /* Aumenta o tamanho do link em 50% ao passar o mouse */
+    }
 }
 
 @media (min-width: 1200px) {
