@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+/* Importa a fonte 'Inter' do Google Fonts com pesos 300 (light), 400 (regular) e 600 (semibold).
+   O 'display=swap' permite que uma fonte de fallback seja exibida até que a fonte 'Inter' seja carregada. */
+
+:root {
+    --primary-color: #007AFF; /* Define a cor primária (azul) */
+    --secondary-color: #34C759; /* Define a cor secundária (verde) */
+    --background-color: #000000; /* Define a cor de fundo (preto) */
+    --text-color: #FFFFFF; /* Define a cor do texto (branco) */
+    /* As variáveis CSS permitem uma fácil reutilização e manutenção das cores no código */
+}
+
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Define o modelo de caixa para que padding e bordas sejam incluídos nas dimensões dos elementos */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Aplica a fonte 'Inter' ao corpo do documento */
+    background-color: var(--background-color); /* Define o fundo do corpo como a cor de fundo especificada */
+    color: var(--text-color); /* Define a cor do texto */
+    line-height: 1.6; /* Define a altura da linha para melhorar a legibilidade do texto */
+    min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura da viewport */
+    display: flex; /* Define o layout do corpo como flexbox */
+    flex-direction: column; /* Organiza os elementos filhos em uma coluna */
+}
+
+header {
+    position: fixed; /* Mantém o cabeçalho fixo na parte superior da página */
+    top: 0; /* Alinha o cabeçalho ao topo */
+    left: 0; /* Alinha o cabeçalho à esquerda */
+    right: 0; /* Alinha o cabeçalho à direita */
+    background-color: rgba(0, 0, 0, 0.1); /* Aplica um fundo preto translúcido ao cabeçalho */
+    backdrop-filter: blur(10px); /* Aplica um efeito de desfoque ao conteúdo atrás do cabeçalho */
+    z-index: 1000; /* Garante que o cabeçalho esteja sempre sobreposto a outros elementos */
+}
+
+nav {
+    display: flex; /* Define o layout do menu de navegação como flexbox */
+    justify-content: space-between; /* Distribui os itens igualmente, com espaço entre eles */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 1rem 5%; /* Adiciona preenchimento ao redor do menu */
+    flex-wrap: wrap; /* Permite que os itens se movam para uma nova linha se não houver espaço */
+}
+
+.profile-photo {
+    width: 80px; /* Define a largura da foto de perfil */
+    height: 80px; /* Define a altura da foto de perfil */
+    border-radius: 50%; /* Torna a foto de perfil circular */
+    overflow: hidden; /* Oculta qualquer parte da imagem que exceda os limites do contêiner */
+    margin-right: 1rem; /* Adiciona espaço à direita da foto de perfil */
+}
+
+.profile-photo img {
+    width: 100%; /* Faz com que a imagem preencha 100% do contêiner pai */
+    height: 100%; /* Faz com que a imagem tenha 100% da altura do contêiner pai */
+    object-fit: cover; /* Garante que a imagem mantenha suas proporções ao preencher o espaço disponível */
+}
+
+nav h1 {
+    font-size: 1.5rem; /* Define o tamanho da fonte do título do menu */
+    font-weight: 600; /* Define o peso da fonte como semibold */
+}
+
+nav ul {
+    display: flex; /* Define a lista de navegação como flexbox */
+    list-style: none; /* Remove os marcadores da lista */
+    flex-wrap: wrap; /* Permite que os itens se movam para uma nova linha se não houver espaço */
+}
+
+nav ul li {
+    margin-left: 1rem; /* Adiciona espaço à esquerda de cada item da lista */
+    margin-top: 0.5rem; /* Adiciona espaço acima de cada item da lista */
+}
+
+nav ul li a {
+    color: var(--text-color); /* Define a cor do link como a cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: 300; /* Define o peso da fonte como light */
+    transition: color 0.3s ease; /* Adiciona uma transição suave à cor do link ao passar o mouse */
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--primary-color); /* Muda a cor do link para a cor primária ao passar o mouse ou quando ativo */
+}
+
+main {
+    flex: 1; /* Permite que o elemento principal cresça para ocupar o espaço restante */
+    padding: 80px 5% 60px; /* Adiciona preenchimento ao redor do conteúdo principal */
+    max-width: 1200px; /* Define uma largura máxima para o conteúdo principal */
+    margin: 0 auto; /* Centraliza o conteúdo principal na página */
+}
+
+.section {
+    min-height: 100vh; /* Define uma altura mínima para cada seção */
+    display: flex; /* Estabelece um layout flexbox para as seções */
+    flex-direction: column; /* Organiza os elementos filhos em uma coluna */
+    justify-content: center; /* Alinha os filhos verticalmente ao centro */
+    align-items: center; /* Alinha os filhos horizontalmente ao centro */
+    padding: 2rem 0; /* Adiciona espaço ao redor da seção */
+    opacity: 0; /* Define a opacidade inicial como 0 (invisível) */
+    transform: translateY(50px); /* Move a seção 50 pixels para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Adiciona transições suaves para opacidade e transformação */
+}
+
+.section.active {
+    opacity: 1; /* Torna a seção visível quando ativa */
+    transform: translateY(0); /* Retorna a seção à sua posição original */
+}
+
+h2 {
+    font-size: 2.5rem; /* Define um tamanho grande para o título da seção */
+    margin-bottom: 1rem; /* Adiciona espaço abaixo do título */
+    text-align: center; /* Centraliza o título horizontalmente */
+}
+
+p {
+    font-size: 1.1rem; /* Define um tamanho legível para o parágrafo */
+    max-width: 750px; /* Limita a largura máxima do parágrafo para melhorar a legibilidade */
+    text-align: center; /* Centraliza o texto do parágrafo */
+}
+
+.projeto-grid {
+    display: grid; /* Define o layout da grade para os projetos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas responsivas que se adaptam ao tamanho da tela */
+    gap: 2rem; /* Adiciona espaço entre os itens da grade */
+    width: 100%; /* Faz a grade ocupar toda a largura disponível */
+}
+
+.projeto-item {
+    background-color: transparent; /* Define o fundo dos itens de projeto como transparente */
+    perspective: 1000px; /* Define a perspectiva 3D para efeitos de rotação */
+    height: 250px; /* Define a altura de cada item do projeto */
+}
+
+.projeto-inner {
+    position: relative; /* Estabelece uma posição relativa para o elemento interno */
+    width: 100%; /* Faz com que o contêiner interno preencha toda a largura do pai */
+    height: 100%; /* Faz com que o contêiner interno preencha toda a altura do pai */
+    text-align: center; /* Centraliza o texto dentro do contêiner interno */
+    transition: transform 0.6s; /* Adiciona uma transição suave para a transformação */
+    transform-style: preserve-3d; /* Mantém a aparência 3D para elementos filhos */
+}
+
+.projeto-item:hover .projeto-inner {
+    transform: rotateY(180deg); /* Rotaciona o contêiner interno em 180 graus ao passar o mouse sobre o item de projeto */
+}
+
+.projeto-front, .projeto-back {
+    position: absolute; /* Define uma posição absoluta para os lados do projeto */
+    width: 100%; /* Faz com que ambos os lados preencham todo o espaço do contêiner pai */
+    height: 100%; /* Faz com que ambos os lados tenham a mesma altura que o contêiner pai */
+    backface-visibility: hidden; /* Oculta o lado oposto ao girar o contêiner */
+    display: flex; /* Define o layout dos lados como flexbox */
+    flex-direction: column; /* Organiza os elementos dos lados em uma coluna */
+    justify-content: center; /* Alinha os elementos no centro verticalmente */
+    align-items: center; /* Alinha os elementos no centro horizontalmente */
+    border-radius: 10px; /* Aplica bordas arredondadas a ambos os lados */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites dos lados */
+}
+
+.projeto-front {
+    background-color: rgba(255, 255, 255, 0.1); /* Aplica um fundo branco translúcido ao lado da frente */
+}
+
+.projeto-front img {
+    width: 100%; /* Faz a imagem da frente preencher 100% do contêiner */
+    height: 100%; /* Faz a imagem da frente preencher 100% da altura do contêiner */
+    object-fit: cover; /* Garante que a imagem mantenha suas proporções ao preencher o espaço */
+}
+
+.projeto-back {
+    background-color: var(--primary-color); /* Aplica a cor primária como fundo do lado de trás */
+    color: var(--text-color); /* Define a cor do texto no lado de trás */
+    transform: rotateY(180deg); /* Rotaciona o lado de trás em 180 graus para escondê-lo inicialmente */
+    padding: 1rem; /* Adiciona preenchimento ao redor do conteúdo do lado de trás */
+    
+}
+
+.social-links {
+    display: flex; /* Define o layout das redes sociais como flexbox */
+    justify-content: center; /* Centraliza os links das redes sociais horizontalmente */
+    gap: 2rem; /* Adiciona espaço entre os links das redes sociais */
+    margin-top: 2rem; /* Adiciona margem acima do contêiner de links sociais */
+    flex-wrap: wrap; /* Permite que os links se movam para uma nova linha se não houver espaço */
+}
+
+.social-links a {
+    display: inline-block; /* Define que os links das redes sociais são blocos inline para que as propriedades de largura e altura possam ser aplicadas */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao transformar o link ao passar o mouse */
+}
+
+.social-links a:hover {
+    transform: scale(3.0); /* Aumenta o tamanho do link em 50% ao passar o mouse */
+}
+
+
+.social-links img {
+    width: 100px; /* Define a largura dos ícones das redes sociais */
+    height: 100px; /* Define a altura dos ícones das redes sociais */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Aplica um fundo preto translúcido ao rodapé */
+    text-align: center; /* Centraliza o texto dentro do rodapé */
+    padding: 1rem; /* Adiciona preenchimento ao redor do conteúdo do rodapé */
+    position: fixed; /* Mantém o rodapé fixo na parte inferior da página */
+    bottom: 0; /* Alinha o rodapé à parte inferior da página */
+    left: 0; /* Alinha o rodapé à esquerda */
+    right: 0; /* Alinha o rodapé à direita */
+    z-index: 1000; /* Garante que o rodapé esteja sempre sobreposto a outros elementos */
+}
+
+.tetris-piece {
+    position: absolute; /* Define uma posição absoluta para os elementos de 'tetris' */
+    width: 30px; /* Define a largura de cada peça do tetris */
+    height: 30px; /* Define a altura de cada peça do tetris */
+    background-color: var(--primary-color); /* Aplica a cor primária como fundo da peça do tetris */
+    opacity: 0.5; /* Define a opacidade da peça do tetris */
+    z-index: -1; /* Coloca a peça do tetris atrás de outros elementos */
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); } /* No início da animação, a peça do tetris começa fora da tela no topo */
+    100% { transform: translateY(100vh) rotate(360deg); } /* No final, a peça desce até a parte inferior da tela e completa uma rotação de 360 graus */
+}
+
+@media (max-width: 768px) {
+    /* Estabelece regras de estilo para telas com largura máxima de 768px (dispositivos móveis) */
+    nav {
+        flex-direction: column; /* Organiza os itens do menu em uma coluna */
+        align-items: flex-start; /* Alinha os itens do menu à esquerda */
+    }
+
+    nav ul {
+        margin-top: 1rem; /* Adiciona espaço acima da lista de navegação */
+    }
+
+    nav ul li {
+        margin-left: 0; /* Remove a margem esquerda dos itens da lista */
+        margin-right: 1rem; /* Adiciona margem à direita dos itens da lista */
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduz o tamanho do título da seção em dispositivos móveis */
+    }
+
+    p {
+        font-size: 1rem; /* Reduz o tamanho do texto do parágrafo em dispositivos móveis */
+    }
+
+    .projeto-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adapta a grade para colunas menores em dispositivos móveis */
+    }
+
+    .projeto-item {
+        height: 200px; /* Reduz a altura dos itens de projeto em dispositivos móveis */
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Estabelece regras de estilo para telas com largura mínima de 1200px (telas grandes) */
+    main {
+        padding-left: 10%; /* Aumenta o preenchimento à esquerda do conteúdo principal */
+        padding-right: 10%; /* Aumenta o preenchimento à direita do conteúdo principal */
+    }
+
+    .projeto-grid {
+        max-width: 1000px; /* Limita a largura máxima da grade de projetos em telas grandes */
+        margin: 0 auto; /* Centraliza a grade na tela */
+    }
+}
