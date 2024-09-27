@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrolled = window.scrollY; // Obtém a quantidade de rolagem
         // Aplica um efeito de parallax nas seções com base na quantidade de rolagem
         sections.forEach((section, index) => {
-            const speed = 0.3 * (index + 1); // Calcula a velocidade do parallax com base no índice da seção
-            section.style.transform = `translateY(${scrolled * speed * 0.1}px)`; // Aplica a transformação
+            const speed = 0.2 * (index + 1); // Calcula a velocidade do parallax com base no índice da seção
+            section.style.transform = `translateY(${scrolled * speed * 0.4}px)`; // Aplica a transformação
         });
     });
 });

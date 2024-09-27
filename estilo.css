@@ -14,6 +14,7 @@
     margin: 0; /* Remove a margem padrão de todos os elementos */
     padding: 0; /* Remove o preenchimento padrão de todos os elementos */
     box-sizing: border-box; /* Define o modelo de caixa para que padding e bordas sejam incluídos nas dimensões dos elementos */
+    
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura da viewport */
     display: flex; /* Define o layout do corpo como flexbox */
     flex-direction: column; /* Organiza os elementos filhos em uma coluna */
+    overflow-x: hidden; /* Garante que o body não tenha scroll lateral */
 }
 
 header {
@@ -31,8 +33,8 @@ header {
     top: 0; /* Alinha o cabeçalho ao topo */
     left: 0; /* Alinha o cabeçalho à esquerda */
     right: 0; /* Alinha o cabeçalho à direita */
-    background-color: rgba(0, 0, 0, 0.1); /* Aplica um fundo preto translúcido ao cabeçalho */
-    backdrop-filter: blur(10px); /* Aplica um efeito de desfoque ao conteúdo atrás do cabeçalho */
+    background-color: rgba(0, 0, 0, 0.3); /* Aplica um fundo preto translúcido ao cabeçalho */
+    backdrop-filter: blur(2px); /* Aplica um efeito de desfoque ao conteúdo atrás do cabeçalho */
     z-index: 1000; /* Garante que o cabeçalho esteja sempre sobreposto a outros elementos */
 }
 
@@ -90,6 +92,7 @@ main {
     padding: 80px 5% 60px; /* Adiciona preenchimento ao redor do conteúdo principal */
     max-width: 1200px; /* Define uma largura máxima para o conteúdo principal */
     margin: 0 auto; /* Centraliza o conteúdo principal na página */
+    
 }
 
 .section {
@@ -119,13 +122,16 @@ p {
     font-size: 1.1rem; /* Define um tamanho legível para o parágrafo */
     max-width: 750px; /* Limita a largura máxima do parágrafo para melhorar a legibilidade */
     text-align: center; /* Centraliza o texto do parágrafo */
+    margin-bottom: 1rem; /* Adiciona um espaço entre os parágrafos */
 }
 
 .projeto-grid {
     display: grid; /* Define o layout da grade para os projetos */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas responsivas que se adaptam ao tamanho da tela */
     gap: 2rem; /* Adiciona espaço entre os itens da grade */
-    width: 100%; /* Faz a grade ocupar toda a largura disponível */
+    width: 90%; /* Faz a grade ocupar toda a largura disponível */
+    max-width: 1000px; /* Limita a largura máxima da grid */
+    margin: 0 auto;
 }
 
 .projeto-item {
@@ -139,7 +145,7 @@ p {
     width: 100%; /* Faz com que o contêiner interno preencha toda a largura do pai */
     height: 100%; /* Faz com que o contêiner interno preencha toda a altura do pai */
     text-align: center; /* Centraliza o texto dentro do contêiner interno */
-    transition: transform 0.6s; /* Adiciona uma transição suave para a transformação */
+    transition: transform 1.9s; /* Adiciona uma transição suave para a transformação */
     transform-style: preserve-3d; /* Mantém a aparência 3D para elementos filhos */
 }
 
@@ -168,6 +174,7 @@ p {
     width: 100%; /* Faz a imagem da frente preencher 100% do contêiner */
     height: 100%; /* Faz a imagem da frente preencher 100% da altura do contêiner */
     object-fit: cover; /* Garante que a imagem mantenha suas proporções ao preencher o espaço */
+    max-width: 100%; /* Garante que a imagem nunca ultrapasse os limites do contêiner */
 }
 
 .projeto-back {
@@ -192,7 +199,7 @@ p {
 }
 
 .social-links a:hover {
-    transform: scale(3.0); /* Aumenta o tamanho do link em 50% ao passar o mouse */
+    transform: scale(2.0); /* Aumenta o tamanho do link em 50% ao passar o mouse */
 }
 
 
@@ -240,6 +247,7 @@ footer {
     nav ul li {
         margin-left: 0; /* Remove a margem esquerda dos itens da lista */
         margin-right: 1rem; /* Adiciona margem à direita dos itens da lista */
+        width: 100%; /* Garante que os itens não causem scroll lateral em telas pequenas */
     }
 
     h2 {
