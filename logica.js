@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Define o número de peças com base na largura da janela
-    const numPieces = window.innerWidth < 768 ? 15 : 100; // Se a largura da janela for menor que 768px, cria 5 peças; caso contrário, cria 10
+    const numPieces = window.innerWidth < 768 ? 5 : 10; // Se a largura da janela for menor que 768px, cria 5 peças; caso contrário, cria 10
     for (let i = 0; i < numPieces; i++) {
         setTimeout(createTetrisPiece, i * 500); // Cria cada peça com um atraso de 500ms entre elas
     }
