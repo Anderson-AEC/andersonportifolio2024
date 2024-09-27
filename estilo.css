@@ -268,7 +268,15 @@ footer {
     }
 
     .social-links a:hover {
-        transform: scale(2.0); /* Aumenta o tamanho do link em 50% ao passar o mouse */
+        transform: scale(1.0); /* Aumenta o tamanho do link em 50% ao passar o mouse */
+    }
+    .tetris-piece {
+        position: absolute; /* Define uma posição absoluta para os elementos de 'tetris' */
+        width: 30px; /* Define a largura de cada peça do tetris */
+        height: 30px; /* Define a altura de cada peça do tetris */
+        background-color: var(--primary-color); /* Aplica a cor primária como fundo da peça do tetris */
+        opacity: 0.5; /* Define a opacidade da peça do tetris */
+        z-index: -1; /* Coloca a peça do tetris atrás de outros elementos */
     }
 }
 

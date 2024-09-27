@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove todas as peças de Tetris existentes
             document.querySelectorAll('.tetris-piece').forEach(piece => piece.remove());
             // Cria 5 novas peças de Tetris
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 0; i++) {
                 setTimeout(createTetrisPiece, i * 500);
             }
         }
