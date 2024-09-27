@@ -10,22 +10,32 @@
 <body>
     <header>
         <nav>
-            <div class="nav-left"> <!-- Contêiner para a parte esquerda da navegação -->
-                <div class="profile-photo"> <!-- Contêiner para a foto de perfil -->
-                    <img src="imagens/AndersonDaSilvaGomes.jpg" alt="Foto de Perfil" id="profile-photo"> <!-- Imagem da foto de perfil -->
+            <div class="nav-left">
+                <div class="profile-photo">
+                    <img src="imagens/AndersonDaSilvaGomes.jpg" alt="Foto de Perfil" id="profile-photo">
                 </div>
-                <h1>Anderson da Silva Gomes</h1> <!-- Título do portfólio -->
+                <h1>Anderson da Silva Gomes</h1>
             </div>
-            <ul class="nav-right"> <!-- Lista para a parte direita da navegação -->
-                <li><a href="#home">Home</a></li> <!-- Link para a seção Home -->
-                <li><a href="#QuemSouEu">Quem sou eu?</a></li> <!-- Quem sou eu? -->
-                <li><a href="#skill">Lifelong learning</a></li> <!-- Link para a seção Sobre -->
-                <li><a href="#sobre">Sobre mim</a></li> <!-- Link para a seção Sobre -->
-                <li><a href="#projetos">Projetos</a></li> <!-- Link para a seção Projetos -->
-                <li><a href="#contato">Contato</a></li> <!-- Link para a seção Contato -->
+            <!-- Checkbox que controla o menu hamburguer -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <!-- Ícone do menu hamburguer -->
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            <!-- Lista de navegação -->
+            <ul class="nav-right">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#QuemSouEu">Quem sou eu?</a></li>
+                <li><a href="#skill">Lifelong learning</a></li>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
+    
 
     <main>
         <section id="home" class="section"> <!-- Seção Home -->

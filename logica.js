@@ -126,3 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Espera o DOM carregar completamente antes de executar o código
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona o checkbox que controla o menu hamburguer
+    const menuToggle = document.getElementById('menu-toggle');
+    
+    // Seleciona todos os links dentro da lista de navegação
+    const navLinks = document.querySelectorAll('.nav-right li a');
+
+    // Adiciona um evento de clique a cada link do menu de navegação
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            // Desmarca o checkbox quando um link for clicado, fechando o menu
+            menuToggle.checked = false;
+        });
+    });
+});
